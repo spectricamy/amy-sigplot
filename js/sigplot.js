@@ -2529,9 +2529,9 @@
                             wpipe.ws.close();
                             return;
                         } else if (msg.event === "abscissa_update") {
-                            if (wpipe.plotLayerOptions.layerType === Layer1D) {
+                            if (wpipe.plotLayerOptions.layerType === Layer1D || wpipe.plotLayerOptions.layerType === "1D") {
                                 wpipe.hcb.xstart += msg.payload.skip_count * wpipe.hcb.xdelta;
-                            } else if (wpipe.plotLayerOptions.layerType === Layer2D) {
+                            } else if (wpipe.plotLayerOptions.layerType === Layer2D || wpipe.plotLayerOptions.layerType === "2D") {
                                 wpipe.hcb.ystart += msg.payload.skip_count * wpipe.hcb.ydelta;
                             }
                         } else {
@@ -2539,10 +2539,10 @@
                             wpipe.ws.close();
                         }
                     } else {
-                        if (wpipe.plotLayerOptions.layerType === Layer1D) {
+                        if (wpipe.plotLayerOptions.layerType === Layer1D || wpipe.plotLayerOptions.layerType === "1D") {
                             var array = wpipe.hcb.createArray(evt.data);
                             plot.push(wpipe.layer_n, array);
-                        } else if (wpipe.plotLayerOptions.layerType === Layer2D) {
+                        } else if (wpipe.plotLayerOptions.layerType === Layer2D || wpipe.plotLayerOptions.layerType === "2D") {
                             var numFrames = evt.data.byteLength / wpipe.hcb.bpe;
                             for (var i = 0; i < numFrames; ++i) {
                                 var offset = i * wpipe.hcb.bpe;
