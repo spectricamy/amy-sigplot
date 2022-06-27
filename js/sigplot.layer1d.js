@@ -192,7 +192,7 @@
                     throw "Invalid draw mode";
                 }
 
-                // transfer length is adjusted to the remaining size 
+                // transfer length is adjusted to the remaining size
                 // before wrapping
                 var ngot = m.grabx(
                     this.hcb, ybuf,
@@ -367,7 +367,7 @@
                 if (hdrmod.subsize) {
                     if (this.hcb["class"] === 2) {
                         m.force1000(this.hcb);
-                        this.size = this.hcb.subsize;
+                        this.size = hdrmod.subsize;
                         // Reset the buffer
                         this.position = null;
                         this.ybufn = this.size * Math.max(this.skip * m.PointArray.BYTES_PER_ELEMENT, m.PointArray.BYTES_PER_ELEMENT);
