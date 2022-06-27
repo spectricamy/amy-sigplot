@@ -2555,7 +2555,7 @@
                 };
             })(wpipe.ws);
 
-            return wpipe.layer_n;
+            return wpipe;
         },
 
 
