@@ -367,7 +367,7 @@
                 if (hdrmod.subsize) {
                     if (this.hcb["class"] === 2) {
                         m.force1000(this.hcb);
-                        this.size = hdrmod.subsize;
+                        this.size = this.hcb.subsize;
                         // Reset the buffer
                         this.position = null;
                         this.ybufn = this.size * Math.max(this.skip * m.PointArray.BYTES_PER_ELEMENT, m.PointArray.BYTES_PER_ELEMENT);
